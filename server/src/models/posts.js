@@ -5,20 +5,20 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  published_on: {
-    type: Date,
-    required: true
-  },
   author: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
     ref: 'User'
   },
+  cover_photo: {
+    type: String,
+    required: false
+  }
 },
 {
   timestamps: true
 })
 
-const Book = mongoose.model('Book', bookSchema)
+const Post = mongoose.model('Post', postSchema)
 
-module.exports = Book;
+export { Post as Post};
