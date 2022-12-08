@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import validator from 'validator';
 import bcryptjs from 'bcryptjs';
 import jsonwebtoken from 'jsonwebtoken';
-import Post from '../models/posts.js';
+import {Post} from '../models/posts.js';
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -95,4 +95,4 @@ userSchema.pre('save', async function(next) {
 
 const User = mongoose.model('User', userSchema);
 
-module.exports = User;
+export { User };

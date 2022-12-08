@@ -1,2 +1,5 @@
 import mongoose from 'mongoose';
-mongoose.connect('mongodb://127.0.0.1:27017', {})
+import * as dotenv from 'dotenv';
+dotenv.config();
+
+mongoose.connect(process.env.MONGODB_URL, {})
