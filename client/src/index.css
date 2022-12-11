@@ -36,6 +36,8 @@ code {
 .input {
   @apply rounded;
   border: 1px solid #ccc;
+  height: 32px;
+  padding: 0 4px;
 }
 
 .btn {
