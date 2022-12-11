@@ -1,5 +1,5 @@
 .header {
-    border-bottom: 1px solid var(--green-primary);
+    border-bottom: 1px solid var(--primary-gray);
     height: 64px;
     display: flex;
     align-items: center;

@@ -8,7 +8,7 @@ const Signup = lazy(() => import("./signup/Signup"));
 import Nav from './common/components/Nav/Nav';
 
 const App: Component = () => {
-  return <div class="app">
+  return <div class="app h-full w-full">
     <Nav></Nav>
     <Routes>
       <Route path="/" component={Home} />

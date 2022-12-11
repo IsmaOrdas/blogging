@@ -42,11 +42,9 @@ userSchema.virtual('post', {
 // Custom instace method
 userSchema.methods.generateAuthToken = async function () {
   const user = this;
-  const token = jwt.sign({ _id: user._id.toString() }, process.env.JWT_SECRET);
-
+  const token = jsonwebtoken.sign({ _id: user._id.toString() }, process.env.JWT_SECRET);
   user.tokens = user.tokens.concat({ token })
   await user.save()
-
   return token;
 }
 
@@ -68,7 +66,7 @@ userSchema.statics.findByCredentials = async (username, password) => {
     throw new Error('User not found');
   }
 
-  const passwordMatch = await bcrypt.compare(password, user.password);
+  const passwordMatch = await bcryptjs.compare(password, user.password);
 
   if (!passwordMatch) {
     throw new Error('Incorrect username or password.');
@@ -85,9 +83,9 @@ userSchema.pre('remove', async function (next) {
 
 userSchema.pre('save', async function(next) {
   const user = this // this refers to the document about to be save
-
+  
   if (user.isModified('password')) {
-    user.password = await bcrypt.hash(user.password, 8);
+    user.password = await bcryptjs.hash(user.password, 8);
   }
 
   next();
