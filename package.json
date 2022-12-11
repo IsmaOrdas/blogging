@@ -18,7 +18,8 @@
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.0.3",
     "jsonwebtoken": "^8.5.1",
-    "validator": "^13.7.0"
+    "validator": "^13.7.0",
+    "vite-plugin-windicss": "^1.8.8"
   },
   "type": "module"
 }

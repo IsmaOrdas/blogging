@@ -1,3 +1,7 @@
+* {
+  --green-primary: #006f5c;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +14,16 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.input {
+  @apply rounded;
+  border: 1px solid #ccc;
+}
+
+.btn {
+  @apply rounded;
+  background-color: var(--green-primary);
+  color: white;
+  padding: 8px 16px;
 }
