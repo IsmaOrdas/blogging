@@ -2,10 +2,10 @@ import { Component, Suspense } from 'solid-js';
 import { Routes, Route, A } from "@solidjs/router"
 import { lazy } from 'solid-js';
 
-const Home = lazy(() => import("./home/Home"));
-const About = lazy(() => import("./about/About"));
-const Signup = lazy(() => import("./signup/Signup"));
-const Login = lazy(() => import("./login/Login"));
+const Home = lazy(() => import("./pages/home/Home"));
+const About = lazy(() => import("./pages/about/About"));
+const Signup = lazy(() => import("./pages/signup/Signup"));
+const Login = lazy(() => import("./pages/login/Login"));
 import Nav from './common/components/Nav/Nav';
 
 const App: Component = () => {

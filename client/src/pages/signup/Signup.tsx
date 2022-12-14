@@ -1,5 +1,5 @@
 import { Component, createSignal } from 'solid-js';
-import {httpClient} from '../common/http/http-client';
+import {httpClient} from '../../common/http/http-client';
 
 const Signup: Component = () => {
     const [username, setUsername] = createSignal('');
