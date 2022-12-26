@@ -1,6 +1,15 @@
 import { createApp } from 'vue'
-import './style.css'
+import './common/styles/style.css';
 import App from './App.vue'
 import 'virtual:windi.css'
+import { setupRouter } from './common/router';
 
-createApp(App).mount('#app')
+
+async function bootstrapApp() {
+	const app = createApp(App);
+	setupRouter(app);
+
+	app.mount('#app');
+}
+
+await bootstrapApp();
