@@ -5,6 +5,7 @@ import {User} from '../models/users.js';
 
 router.post('/users', async (req, res) => {
   try {
+    console.log(req)
     if (!Object.keys(req.body) || !req.body.username || !req.body.password) {
       res.status(400).send('Invalid input.');
     }
