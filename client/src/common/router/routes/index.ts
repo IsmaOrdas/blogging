@@ -1,2 +1,3 @@
 import Home from './home';
-export const routes = [Home];
+import Signup from './signup';
+export const routes = [Home, Signup];

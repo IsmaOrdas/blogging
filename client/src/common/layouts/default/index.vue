@@ -1,8 +1,7 @@
 <template>
   <div class="app-wrap">
-    <Header />
+    <Header></Header>
     <main class="app-content">
-      
     </main>
   </div>
 </template>
