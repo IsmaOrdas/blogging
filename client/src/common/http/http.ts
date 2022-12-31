@@ -30,16 +30,7 @@ function createAxios() {
             return response.data;
         },
         function (error) {
-            if (error.response.status === 401) {
-                if (!window.location.href.includes("login")) {
-                    window.location.href = `${import.meta.env.VITE_APP_BASE_URL}login`;
-                }
-                return;
-            }
-
-            if (axios.isCancel(error)) {
-                return 'request cancelled';
-            }
+            
 
             return Promise.reject(error);
         }

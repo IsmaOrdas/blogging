@@ -2,6 +2,7 @@
   <div class="app-wrap">
     <Header></Header>
     <main class="app-content">
+      <router-view />
     </main>
   </div>
 </template>

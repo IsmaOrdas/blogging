@@ -15,12 +15,10 @@
     "mongoose": "^6.8.0"
   },
   "devDependencies": {
-    "axios": "^1.2.1",
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.0.3",
     "jsonwebtoken": "^8.5.1",
-    "validator": "^13.7.0",
-    "vite-plugin-windicss": "^1.8.8"
+    "validator": "^13.7.0"
   },
   "type": "module"
 }
