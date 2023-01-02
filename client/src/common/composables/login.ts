@@ -1,11 +1,11 @@
-import { createUser } from "../api/users";
-import { UserForm } from "../../common/types";
+import { loginUser } from "../api/users";
+import { UserForm } from "../types";
 import { useUserStore } from "../../common/store/user";
 
-export async function signupUser(form: UserForm) {
+export async function signinUser(form: UserForm) {
     try {
         const userStore = useUserStore();
-        const response = await createUser(form);
+        const response = await loginUser(form);
 
         if (response && response.user && response.token) {
             userStore.setLoggedUser({
@@ -13,6 +13,7 @@ export async function signupUser(form: UserForm) {
                 token: response.token
             })
         }
+        return true
     } catch (e) {
         console.error(e);
     }

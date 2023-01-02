@@ -1,3 +1,4 @@
 import Home from './home';
 import Signup from './signup';
-export const routes = [Home, Signup];
+import Signin from './login';
+export const routes = [Home, Signup, Signin];

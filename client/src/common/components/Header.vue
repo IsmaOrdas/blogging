@@ -8,14 +8,23 @@
             </nav>
         </div>
         <div>
-            <router-link class='btn mr-2' to="/signup">Sign up</router-link>
-            <router-link class='btn-secondary' to='/login'>Login</router-link>
+            <template v-if="!userLogged">
+                <router-link class='btn mr-2' to="/signup">Sign up</router-link>
+                <router-link class='btn-secondary' to='/signin'>Login</router-link>
+            </template>
+            <template v-else>
+                <span>{{ userInfo.username }}</span>
+            </template>
         </div>
     </header>
 </template>
 
 <script lang="ts" setup>
+import { storeToRefs } from "pinia"
+import { useUserStore } from "../store/user";
 
+const { userLogged, userInfo } = storeToRefs(useUserStore());
+console.log(userLogged)
 </script>
 
 <style scoped>
