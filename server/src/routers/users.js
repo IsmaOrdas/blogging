@@ -21,13 +21,22 @@ router.post('/users', async (req, res) => {
 
 router.post('/users/login', async (req, res) => {
   try {
-    console.log(req.body)
     const user = await User.findByCredentials(req.body.username, req.body.password);
-    console.log(user)
     const token = await user.generateAuthToken();
     res.send({ user, token });
   } catch (e) {
     res.status(400).send();
+  }
+})
+
+router.post('/users/logout', auth, async (req, res) => {
+  try {
+    console.log(req)
+    req.user.tokens = req.user.tokens.filter(token => { return token.token !== req.token })
+    await req.user.save()
+    res.send()
+  } catch (e) {
+    res.status(500).send();
   }
 })
 

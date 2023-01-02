@@ -15,8 +15,9 @@ function createAxios() {
 
     httpClient.interceptors.request.use(
         function (config: MyAxiosRequestConfig) {
-            if (localStorage.getItem('token') && config.headers.common['Authorization'] === undefined) {
-                config.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('token');
+            console.log(config)
+            if (localStorage.getItem('token') && !config?.headers['Authorization']) {
+                config.headers['Authorization'] = 'Bearer ' + localStorage.getItem('token');
             }
             return config;
         },

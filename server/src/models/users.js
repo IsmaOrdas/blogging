@@ -61,13 +61,12 @@ userSchema.methods.toJSON = function () {
 // Custom method
 userSchema.statics.findByCredentials = async (username, password) => {
   const user = await User.findOne({ username });
-  console.log(user)
   if (!user) {
     throw new Error('User not found');
   }
 
   const passwordMatch = await bcryptjs.compare(password, user.password);
-  console.log(passwordMatch)
+
   if (!passwordMatch) {
     throw new Error('Incorrect username or password.');
   }

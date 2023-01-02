@@ -14,6 +14,7 @@
             </template>
             <template v-else>
                 <span>{{ userInfo.username }}</span>
+                <span @click="logout">Logout</span>
             </template>
         </div>
     </header>
@@ -22,6 +23,7 @@
 <script lang="ts" setup>
 import { storeToRefs } from "pinia"
 import { useUserStore } from "../store/user";
+import { logout } from "../composables/login";
 
 const { userLogged, userInfo } = storeToRefs(useUserStore());
 console.log(userLogged)
