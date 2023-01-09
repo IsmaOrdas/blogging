@@ -22,7 +22,9 @@ export async function signinUser(form: UserForm) {
 
 export async function logout() {
     try {
+        const userStore = useUserStore();
         await logoutUser();
+        userStore.setLogoutUser();
     } catch(e) {
         console.error(e);
     }

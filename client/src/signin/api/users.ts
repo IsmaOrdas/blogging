@@ -1,5 +1,5 @@
 import { httpClient } from "../../common/http/http";
-import { UserForm } from "../types";
+import { UserForm } from "../../common/types";
 
 enum Api {
     USER_LOGIN = '/users/login'

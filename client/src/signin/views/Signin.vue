@@ -9,7 +9,7 @@
         </div>
         <div class='mb-4'>
             <label class='block' for="password">Password</label>
-            <input class='input' type="text" name="password" v-model="form.password" />
+            <input class='input' type="password" name="password" v-model="form.password" />
         </div>
         <div class='text-center' @click="login">
             <button class='btn'>Sign in</button>

@@ -13,7 +13,7 @@
                 <router-link class='btn-secondary' to='/signin'>Login</router-link>
             </template>
             <template v-else>
-                <span>{{ userInfo.username }}</span>
+                <span class="mr-2">{{ userInfo.username }}</span>
                 <span @click="logout">Logout</span>
             </template>
         </div>
@@ -26,7 +26,6 @@ import { useUserStore } from "../store/user";
 import { logout } from "../composables/login";
 
 const { userLogged, userInfo } = storeToRefs(useUserStore());
-console.log(userLogged)
 </script>
 
 <style scoped>

@@ -9,7 +9,7 @@
           </div>
           <div class='mb-4'>
               <label class='block' for="password">Password</label>
-              <input class='input' type="text" name="password" v-model="form.password" />
+              <input class='input' type="password" name="password" v-model="form.password" />
           </div>
           <div class='text-center' @click="createAccount">
               <button class='btn'>Create account</button>
@@ -21,7 +21,7 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import { UserForm } from "../types";
+import { UserForm } from "../../common/types";
 import { signupUser } from "../composables/signup";
 
 const form = ref<UserForm>({
