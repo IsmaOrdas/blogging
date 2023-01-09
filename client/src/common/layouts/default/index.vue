@@ -1,7 +1,7 @@
 <template>
   <div class="app-wrap">
     <Header></Header>
-    <main class="app-content">
+    <main class="app-content w-full">
       <router-view />
     </main>
   </div>
@@ -20,8 +20,9 @@ import Header from "../../components/Header.vue"
 }
 
 .app-content {
-    max-width: 1280px;
-    margin: 0 auto;
-  padding: 24px 24px 16px 0;
+  height: calc(100vh - 64px);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px;
 }
 </style>
