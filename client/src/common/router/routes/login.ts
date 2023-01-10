@@ -12,6 +12,6 @@ export default {
 	],
 	props: true,
 	meta: {
-		requiresAuth: true
+		requiresAuth: false
 	}
 };
